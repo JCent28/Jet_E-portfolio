@@ -14,7 +14,7 @@ const PORTFOLIO_DATA = {
     roles: ["Full-Stack Developer", "IT Student", "Cloud Enthusiast", "Problem Solver"],
     tagline: "Building intelligent systems & scalable web solutions.",
     cta: { label: "View My Work", target: "#projects" },
-    ctaSecondary: { label: "Download CV", target: "#" },
+    ctaSecondary: { label: "Download CV", target: "cv_jethro.pdf" },
   },
 
   // ─────────────────────────────────────────────
