@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jethro Mirano — IT Portfolio</title>
+  <meta name="description" content="4th-year IT student portfolio — Full-Stack Developer, Cloud Enthusiast." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <!-- Swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ████ NAV ████ -->
+<nav id="navbar">
+  <div class="nav-brand">
+    <span class="brand-dot"></span>
+    <span id="nav-name">AR</span>
+  </div>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#home" class="nav-link active">Home</a></li>
+    <li><a href="#about" class="nav-link">About</a></li>
+    <li><a href="#skills" class="nav-link">Skills</a></li>
+    <li><a href="#certifications" class="nav-link">Certs</a></li>
+    <li><a href="#projects" class="nav-link">Projects</a></li>
+    <li><a href="#experience" class="nav-link">Experience</a></li>
+    <li><a href="#contact" class="nav-link">Contact</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button id="theme-toggle" aria-label="Toggle theme" title="Toggle dark/light mode">
+      <span id="theme-icon">☀️</span>
+    </button>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Drawer -->
+<div class="mobile-menu" id="mobile-menu">
+  <ul></ul>
+</div>
+
+<!-- ████ HERO ████ -->
+<section id="home" class="hero">
+  <div class="hero-bg">
+    <div class="grid-overlay"></div>
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+  </div>
+  <div class="hero-content">
+    <p class="hero-greeting" data-aos="fade-up" data-aos-delay="100"></p>
+    <h1 class="hero-name" data-aos="fade-up" data-aos-delay="200"></h1>
+    <div class="hero-role-wrap" data-aos="fade-up" data-aos-delay="350">
+      <span class="hero-role-prefix">I'm a </span>
+      <span id="typing-text" class="typing-text"></span>
+      <span class="cursor">|</span>
+    </div>
+    <p class="hero-tagline" data-aos="fade-up" data-aos-delay="450"></p>
+    <div class="hero-ctas" data-aos="fade-up" data-aos-delay="550">
+      <a class="btn btn-primary" id="hero-cta"></a>
+      <a class="btn btn-ghost" id="hero-cta2"></a>
+    </div>
+    <div class="hero-scroll-hint" data-aos="fade-up" data-aos-delay="700">
+      <span>scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ████ ABOUT ████ -->
+<section id="about" class="section">
+  <div class="container">
+    <div class="section-label" data-aos="fade-right">// about me</div>
+    <h2 class="section-title" data-aos="fade-up">Who I Am</h2>
+    <div class="about-grid">
+      <div class="about-left" data-aos="fade-right" data-aos-delay="100">
+        <div class="about-avatar">
+          <div class="avatar-ring"></div>
+          <div class="avatar-inner">
+            <!-- Replace emoji with image -->
+            <img src="img/profile_pic_jet.jpg" alt="Profile Image" class="avatar-img">
+          </div>
+          <div class="avatar-badge" id="edu-badge"></div>
+        </div>
+        <div class="about-interests" id="about-interests"></div>
+      </div>
+      <div class="about-right" data-aos="fade-left" data-aos-delay="150">
+        <div id="about-bio"></div>
+        <div class="about-edu" id="about-edu"></div>
+        <div class="stats-grid" id="stats-grid"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ████ SKILLS ████ -->
+<section id="skills" class="section section-alt">
+  <div class="container">
+    <div class="section-label" data-aos="fade-right">// tech stack</div>
+    <h2 class="section-title" data-aos="fade-up">Skills & Tools</h2>
+    <div class="skill-filters" data-aos="fade-up" data-aos-delay="100" id="skill-filters"></div>
+    <div class="skills-grid" id="skills-grid"></div>
+  </div>
+</section>
+
+<!-- ████ CERTIFICATIONS ████ -->
+<section id="certifications" class="section">
+  <div class="container">
+    <div class="section-label" data-aos="fade-right">// credentials</div>
+    <h2 class="section-title" data-aos="fade-up">Certifications</h2>
+    <div class="swiper cert-swiper" data-aos="fade-up" data-aos-delay="100">
+      <div class="swiper-wrapper" id="cert-swiper-wrapper"></div>
+      <div class="swiper-pagination cert-pagination"></div>
+      <div class="swiper-button-prev cert-prev"></div>
+      <div class="swiper-button-next cert-next"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ████ PROJECTS ████ -->
+<section id="projects" class="section section-alt">
+  <div class="container">
+    <div class="section-label" data-aos="fade-right">// portfolio</div>
+    <h2 class="section-title" data-aos="fade-up">My Projects</h2>
+
+    <!-- Featured -->
+    <div id="featured-project" data-aos="fade-up" data-aos-delay="100"></div>
+
+    <!-- Filter Tabs -->
+    <div class="year-filters" data-aos="fade-up" data-aos-delay="150" id="year-filters"></div>
+
+    <!-- Grid -->
+    <div class="projects-grid" id="projects-grid"></div>
+  </div>
+</section>
+
+<!-- Project Modal -->
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal" id="project-modal">
+    <button class="modal-close" id="modal-close">✕</button>
+    <div class="modal-body" id="modal-body"></div>
+  </div>
+</div>
+
+<!-- ████ EXPERIENCE ████ -->
+<section id="experience" class="section">
+  <div class="container">
+    <div class="section-label" data-aos="fade-right">// journey</div>
+    <h2 class="section-title" data-aos="fade-up">Experience</h2>
+    <div class="timeline" id="timeline"></div>
+  </div>
+</section>
+
+<!-- ████ CONTACT ████ -->
+<section id="contact" class="section section-alt">
+  <div class="container">
+    <div class="section-label" data-aos="fade-right">// let's connect</div>
+    <h2 class="section-title" data-aos="fade-up">Get In Touch</h2>
+    <div class="contact-grid">
+      <div class="contact-info" data-aos="fade-right" data-aos-delay="100" id="contact-info"></div>
+      <form class="contact-form" data-aos="fade-left" data-aos-delay="150" id="contact-form" novalidate>
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" name="name" placeholder="Your full name" required />
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" name="email" placeholder="your@email.com" required />
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea name="message" rows="5" placeholder="Tell me about your project or opportunity..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-full">Send Message →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ████ FOOTER ████ -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <p class="footer-name" id="footer-name"></p>
+    <p class="footer-copy">Built with ❤️ · Designed to stand out</p>
+    <div class="footer-socials" id="footer-socials"></div>
+  </div>
+</footer>
+
+<!-- Scroll to top -->
+<button class="scroll-top" id="scroll-top" title="Back to top">↑</button>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightbox-close">✕</button>
+  <button class="lightbox-nav lightbox-prev" id="lightbox-prev">‹</button>
+  <div class="lightbox-img-wrap" id="lightbox-img-wrap"></div>
+  <div class="lightbox-label" id="lightbox-label"></div>
+  <button class="lightbox-nav lightbox-next" id="lightbox-next">›</button>
+</div>
+
+<!-- Scripts -->
+<script src="data.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
