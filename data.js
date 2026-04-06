@@ -152,7 +152,7 @@ const PORTFOLIO_DATA = {
       description: "An IoT-based river monitoring system that collects real-time data on river levels and sends alerts to a mobile app for flood prevention.",
       longDescription: "This project involved developing a mobile app and IoT system to monitor river levels for flood prevention. It included real-time data collection and alert via LED and Buzzer. I learned about IoT integration, mobile app development, and teamwork.",
       tech: ["Visual Studio", "Arduino IDE", "Xamarin"],
-      images: ["💧", "img/iLigtas2.png"],
+      images: ["💧", "img/3rd Year.jpg"],
       imageLabels: ["Water Icon","Image 1"],
       github: "#",
       demo: "#",
