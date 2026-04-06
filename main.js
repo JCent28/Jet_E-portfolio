@@ -275,8 +275,6 @@ function buildProjects() {
             ${featured.tech.map(t => `<span class="tech-tag">${t}</span>`).join("")}
           </div>
           <div class="featured-actions">
-            <a href="${featured.github}" target="_blank" class="btn btn-primary">GitHub →</a>
-            <a href="${featured.demo}" target="_blank" class="btn btn-ghost">Live Demo</a>
             <button class="btn btn-ghost" onclick='openModal(${JSON.stringify(featured).replace(/'/g,"&#39;")})'>Full Details</button>
           </div>
         </div>
@@ -442,10 +440,7 @@ function openModal(proj) {
     <div class="modal-tech">
       ${proj.tech.map(t => `<span class="tech-tag">${t}</span>`).join("")}
     </div>
-    <div class="modal-actions">
-      <a href="${proj.github}" target="_blank" class="btn btn-primary">View on GitHub →</a>
-      <a href="${proj.demo}" target="_blank" class="btn btn-ghost">Live Demo ↗</a>
-    </div>
+
   `;
 
   // Thumbnail click → swap main image
