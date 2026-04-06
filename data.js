@@ -29,14 +29,14 @@ const PORTFOLIO_DATA = {
       degree: "BS Information Technology",
       school: "Mapúa Malayan Colleges Laguna",
       year: "2021 - Present (4th Year)",
-      honors: "Dean's Lister",
+      honors: "Dean's Lister (3rd term 2022 - 2023)",
     },
     interests: ["Open Source", "Cloud Architecture", "UI/UX Design", "Mobile Dev", "AI/ML"],
     stats: [
       { value: 4, label: "Years of Study", suffix: "yrs" },
       { value: 20, label: "Projects Built", suffix: "+" },
-      { value: 8, label: "Certifications", suffix: "" },
-      { value: 5, label: "Tech Stack", suffix: "+" },
+      { value: 7, label: "Certifications", suffix: "" },
+      { value: 15, label: "Tech Stack", suffix: "+" },
     ],
   },
 
