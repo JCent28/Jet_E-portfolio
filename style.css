@@ -31,10 +31,6 @@
   --font-mono: 'JetBrains Mono', monospace;
 }
 
-pre {
-  font-family: var(--font-mono);
-  line-height: 1.45;
-}
 
 
 [data-theme="light"] {
@@ -76,6 +72,10 @@ input, textarea { font: inherit; }
 ::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 99px; }
 
+pre {
+  font-family: var(--font-mono);
+  line-height: 1.45;
+}
 /* ── Typography ─────────────────────────────────────────────── */
 .section-label {
   font-family: var(--font-mono);
