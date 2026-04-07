@@ -31,6 +31,13 @@
   --font-mono: 'JetBrains Mono', monospace;
 }
 
+pre {
+  font-family: var(--font-mono);
+  line-height: 1.45;
+  letter-spacing: normal;
+}
+
+
 [data-theme="light"] {
   --bg: #f4f4fb;
   --bg-alt: #eaeaf5;
