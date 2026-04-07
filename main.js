@@ -503,9 +503,61 @@ function buildExperience() {
 }
 
 // ── CONTACT ─────────────────────────────────────────────────
+// function buildContact() {
+//   const { contact } = PORTFOLIO_DATA;
+//   const infoEl = document.getElementById("contact-info");
+//   infoEl.innerHTML = `
+//     <div class="contact-detail">
+//       <div class="contact-detail-icon">📧</div>
+//       <div>
+//         <div class="contact-detail-label">Email</div>
+//         <div class="contact-detail-value">${contact.email}</div>
+//       </div>
+//     </div>
+//     <div class="contact-detail">
+//       <div class="contact-detail-icon">📍</div>
+//       <div>
+//         <div class="contact-detail-label">Location</div>
+//         <div class="contact-detail-value">${contact.location}</div>
+//       </div>
+//     </div>
+//     <div class="contact-avail">
+//       <span class="avail-dot"></span>
+//       ${contact.availability}
+//     </div>
+//     <div class="contact-socials">
+//       ${contact.socials.map(s => `
+//         <a href="${s.url}" target="_blank" class="social-link">
+//           <span>${s.icon}</span> ${s.label}
+//         </a>
+//       `).join("")}
+//     </div>
+//   `;
+// }
+
+// function initContactForm() {
+//   const form = document.getElementById("contact-form");
+//   form.addEventListener("submit", e => {
+//     e.preventDefault();
+//     const btn = form.querySelector("button[type=submit]");
+//     btn.textContent = "Sending...";
+//     btn.disabled = true;
+//     setTimeout(() => {
+//       btn.textContent = "Send Message →";
+//       btn.disabled = false;
+//       form.reset();
+//       showToast("✅ Message sent! I'll get back to you soon.");
+//     }, 1500);
+//   });
+// }
+
+/* ─────────────────────────────
+   CONTACT INFO
+───────────────────────────── */
 function buildContact() {
   const { contact } = PORTFOLIO_DATA;
   const infoEl = document.getElementById("contact-info");
+
   infoEl.innerHTML = `
     <div class="contact-detail">
       <div class="contact-detail-icon">📧</div>
@@ -514,6 +566,7 @@ function buildContact() {
         <div class="contact-detail-value">${contact.email}</div>
       </div>
     </div>
+
     <div class="contact-detail">
       <div class="contact-detail-icon">📍</div>
       <div>
@@ -521,10 +574,12 @@ function buildContact() {
         <div class="contact-detail-value">${contact.location}</div>
       </div>
     </div>
+
     <div class="contact-avail">
       <span class="avail-dot"></span>
       ${contact.availability}
     </div>
+
     <div class="contact-socials">
       ${contact.socials.map(s => `
         <a href="${s.url}" target="_blank" class="social-link">
@@ -535,21 +590,47 @@ function buildContact() {
   `;
 }
 
+/* ─────────────────────────────
+   CONTACT FORM (EMAILJS – NO TEMPLATE)
+───────────────────────────── */
 function initContactForm() {
   const form = document.getElementById("contact-form");
-  form.addEventListener("submit", e => {
+
+  form.addEventListener("submit", function (e) {
     e.preventDefault();
+
     const btn = form.querySelector("button[type=submit]");
     btn.textContent = "Sending...";
     btn.disabled = true;
-    setTimeout(() => {
-      btn.textContent = "Send Message →";
-      btn.disabled = false;
-      form.reset();
-      showToast("✅ Message sent! I'll get back to you soon.");
-    }, 1500);
+
+    emailjs
+      .sendForm(
+        "service_1k1m0bl",
+        "default_template",
+        form
+      )
+      .then(() => {
+        btn.textContent = "Send Message →";
+        btn.disabled = false;
+        form.reset();
+        showToast("✅ Message sent! I’ll get back to you soon.");
+      })
+      .catch((error) => {
+        console.error("EmailJS Error:", error);
+        btn.textContent = "Send Message →";
+        btn.disabled = false;
+        showToast("❌ Message failed. Please try again.");
+      });
   });
 }
+
+/* ─────────────────────────────
+   SIMPLE TOAST (fallback)
+───────────────────────────── */
+function showToast(message) {
+  alert(message);
+}
+
 
 // ── FOOTER ──────────────────────────────────────────────────
 function buildFooter() {
