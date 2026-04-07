@@ -28,7 +28,7 @@
   --transition: 0.3s cubic-bezier(0.4,0,0.2,1);
   --font-display: 'Syne', sans-serif;
   --font-body: 'DM Sans', sans-serif;
-  --font-mono: 'JetBrains Mono', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
 }
 
 
@@ -81,7 +81,7 @@ pre {
   font-family: var(--font-mono);
   font-size: 0.78rem;
   color: var(--accent);
-  letter-spacing: 0.12em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   margin-bottom: 0.5rem;
   opacity: 0.8;
