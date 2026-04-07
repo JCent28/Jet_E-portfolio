@@ -606,7 +606,7 @@ function initContactForm() {
     emailjs
       .sendForm(
         "service_1k1m0bl",
-        "default_template",
+        "template_lhpqspz",
         form
       )
       .then(() => {
