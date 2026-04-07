@@ -287,7 +287,7 @@ pre {
   font-size: clamp(3rem, 8vw, 7rem);
   font-weight: 800;
   line-height: 1.02;
-  letter-spacing: normal;
+  letter-spacing: -0.04em;
   margin-bottom: 1rem;
   background: linear-gradient(135deg, var(--text) 50%, var(--text-muted));
   -webkit-background-clip: text;
