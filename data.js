@@ -131,6 +131,20 @@ const PORTFOLIO_DATA = {
   // Add/remove projects freely. featured: true highlights one.
   // ─────────────────────────────────────────────
   projects: [
+   // OJT Projects ---------------------------------------
+    {
+      year: "OJT Project",
+      title: "Document Tracking System",
+      featured: true,
+      description: "A web-based document tracking and approval workflow system for Biñan City Hall, featuring barcode scanning, role-based access control, and real-time status monitoring.",
+      longDescription: "A document tracking system built for Biñan City Hall to manage the lifecycle of official documents across departments. The system supports configurable multi-stage approval workflows, barcode-based document scanning for quick status lookup, role-based access control (Admin, Manager, Supervisor, Staff), and a real-time dashboard with document analytics. Contributed to frontend development by redesigning the dashboard for desktop and mobile, improving the inbox data table, overhauling the document details modal, and refining the stages management and departments modal interfaces.",
+      tech: ["PHP", "CodeIgniter 4", "MySQL", "Bootstrap 5", "jQuery", "Chart.js"],
+      images: ["img/user_dashboard.png", "img/user_barcode_scanner.png", "img/user_DM.png", "img/user_incoming_D.png", "img/user_PF.png", "img/user_IC.png", "img/user_OC.png", "img/admin_D.png", "img/user_Doc", "img/admin_DM.png", "img/admin_DM2.png", "img/admin_PM.png", "img/admin_SM.png", "img/admin_DTM.png", "img/admin_FM.png", "img/admin_SL.png"],
+      imageLabels: ["User Dashboard", "User's Barcode Scanner", "User's Document Management", "User's Incoming Documents", "User's Personal Files", "User's Incoming Correspondence", "User's Outgoing Correspondence", "Admin Dashboard", "User's Document", "Department Management", "Department Management", "Presets Management", "Stages Management", "Document type management", "File management", "Sytem Logs"],
+      github: "#",
+      demo: "#",
+      category: "Web Development",
+    },
     // ── 4th Year ──────────────────────────────
     {
       year: "4th Year",
@@ -138,7 +152,7 @@ const PORTFOLIO_DATA = {
       featured: true,
       description: "A patient monitoring system that tracks heart rate and oxygen saturation during dialysis, sending real-time alerts to nurses.",
       longDescription: "HDA1-R3 is a microcontroller-based assistive notification system designed for hemodialysis patients. It monitors vital signs—heart rate (BPM) and SpO₂—using a MAX30100 sensor. Data from the patient side (slave device) is wirelessly transmitted via ESP8266 modules to the nurse station (master device). Readings are displayed on an LCD, and abnormal values trigger alerts via LEDs and buzzer, enabling faster response times and reducing dependence on manual monitoring or patient calls. The system is programmed using Arduino IDE and C# for extended features.",
-      tech: ["Arduino IDE", "C#", "ESP8266 Wi-Fi Module", "Arduino Uno R3", "MAX30100 Sensor", "LCD Display I2C 16x2", "Active Buzzer", "9V Battery"],
+      tech: ["Arduino IDE", "C++", "ESP8266 Wi-Fi Module", "Arduino Uno R3", "MAX30100 Sensor", "LCD Display I2C 16x2", "Active Buzzer", "9V Battery"],
       images: ["img/hda1r3_1.jpg", "img/hda1r3_2.jpg", "img/hda1r3_3.jpg"],
       imageLabels: ["Image 1", "Image 2", "Image 3"],
       github: "#",
@@ -248,7 +262,7 @@ const PORTFOLIO_DATA = {
     {
       role: "IT Intern (Practicum)",
       company: "Biñan City Hall",
-      period: "December 2025 – Present",
+      period: "December 2025 – April 2026",
       location: "Biñan City, Philippines",
       description: "Contributed to a web-based educational gamification project by mapping math topic questions to pre-built interactive web game templates, analyzing each template's frontend structure to ensure proper content alignment, and creating designs based on supervisor-approved mappings. Also assisted in polishing the document tracking project by improving the Ul, responsive design, and fixing bugs. ",
       highlights: ["PHP", "CI4 Framework", "SQL Server"],
@@ -259,8 +273,8 @@ const PORTFOLIO_DATA = {
       company: "Self Employed",
       period: "2021 – Present",
       location: "Remote - Philippines",
-      description: "Video Editor & Graphic Designer with 4 years of experience delivering high-impact visual content. Expert in tailoring media content for digital pla?orms to drive brand engagement. A collaboraBve professional commiCed to high-quality, deadline-driven results.",
-      highlights: ["Canva", "Capcut", "Slack", "Meta Business Suite", "Photoshop"],
+      description: "Social Media Manager, Video Editor, and Graphic Designer with 5 years of experience helping content creators, local businesses, and wellness professionals build a consistent and engaging online presence. I create short and long-form video content, design static graphics and carousel posts, and manage social media channels end-to-end including caption writing, content briefs, and scheduling across Instagram, LinkedIn, and YouTube. My design toolkit includes Adobe Photoshop and Canva, and I edit video using CapCut. I've worked with professionals in the wellness and human potential space, supporting brand growth and a book launch campaign. I bring both creative instincts and technical thinking to every project, with a background in Information Technology.",
+      highlights: ["Canva", "Photoshop", "Capcut", "Slack", "Meta Business Suite"],
       icon: "🌐",
     },
   ],
@@ -273,10 +287,10 @@ const PORTFOLIO_DATA = {
     location: "Cabuyao City, Philippines",
     availability: "Open to full-time roles & internships",
     socials: [
-      { label: "GitHub", url: "https://github.com/PJethroM", icon: "🐙" },
+      { label: "GitHub", url: "https://github.com/PJethroM", icon: "💻" },
       { label: "LinkedIn", url: "https://www.linkedin.com/in/philip-jethro-mirano-90b830277/", icon: "💼" },
-      { label: "Facebook", url: "https://www.facebook.com/jethro.mirano", icon: "📘" },
-      { label: "Twitter/X", url: "https://twitter.com/", icon: "🐦" },
+      { label: "Upwork", url: "https://www.upwork.com/freelancers/~01e2d1292751478adf?%20mp_source=share", icon: "🧑‍💻" },
+      { label: "Instagram", url: "https://www.instagram.com/jethromirano/", icon: "📸" },
     ],
   },
 };
