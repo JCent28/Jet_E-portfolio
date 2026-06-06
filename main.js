@@ -277,6 +277,11 @@ function buildProjects() {
   const featuredEl = document.getElementById("featured-projects");
   const featuredProjects = projects.filter(p => p.featured).slice(0, 3);
   featuredProjects.forEach(featured => {
+    const previewCount = 3;
+    const previewImages = featured.images.slice(0, previewCount);
+    const previewLabels = featured.imageLabels.slice(0, previewCount);
+    const extraCount = Math.max(0, featured.images.length - previewCount);
+
     const card = document.createElement("div");
     card.className = "featured-card";
     card.innerHTML = `
@@ -293,13 +298,14 @@ function buildProjects() {
       </div>
       <div class="featured-preview">
         <div class="preview-screens">
-          ${featured.images.map((img, i) => `
-            <div class="preview-screen ${i===0?"active":""}" title="${featured.imageLabels[i]}" style="overflow:hidden;position:relative;">
-              ${renderImage(img, featured.imageLabels[i])}
+          ${previewImages.map((img, i) => `
+            <div class="preview-screen ${i===0?"active":""}" title="${previewLabels[i]}" style="overflow:hidden;position:relative;">
+              ${renderImage(img, previewLabels[i])}
             </div>
           `).join("")}
+          ${extraCount > 0 ? `<div class="preview-more">+${extraCount}</div>` : ""}
         </div>
-        <div class="preview-screen-label">${featured.imageLabels[0]}</div>
+        <div class="preview-screen-label">${previewLabels[0] || ''}</div>
       </div>
     `;
 
