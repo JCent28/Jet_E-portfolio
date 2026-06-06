@@ -275,7 +275,7 @@ function buildProjects() {
 
   // Featured
   const featuredEl = document.getElementById("featured-projects");
-  const featuredProjects = projects.filter(p => p.featured);
+  const featuredProjects = projects.filter(p => p.featured).slice(0, 3);
   featuredProjects.forEach(featured => {
     const card = document.createElement("div");
     card.className = "featured-card";
