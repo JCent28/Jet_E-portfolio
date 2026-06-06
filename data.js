@@ -133,7 +133,7 @@ const PORTFOLIO_DATA = {
   projects: [
    // OJT Projects ---------------------------------------
     {
-      year: "OJT Project",
+      year: "4th Year",
       title: "Document Tracking System",
       featured: true,
       description: "A web-based document tracking and approval workflow system for Biñan City Hall, featuring barcode scanning, role-based access control, and real-time status monitoring.",
