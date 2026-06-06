@@ -609,12 +609,17 @@ pre {
 
 /* ── PROJECTS ────────────────────────────────────────────────── */
 /* Featured */
+.featured-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
 .featured-card {
   background: var(--bg-card);
   border: 1px solid var(--accent);
   border-radius: var(--radius);
   padding: 2.5rem;
-  margin-bottom: 3rem;
   display: grid;
   grid-template-columns: 1fr 320px;
   gap: 2.5rem;

@@ -274,43 +274,46 @@ function buildProjects() {
   const featured = projects.find(p => p.featured);
 
   // Featured
-  if (featured) {
-    const el = document.getElementById("featured-project");
-    el.innerHTML = `
-      <div class="featured-card">
-        <div class="featured-badge"></div>
-        <div class="featured-left">
-          <h3>${featured.title}</h3>
-          <p>${featured.description}</p>
-          <div class="featured-tech">
-            ${featured.tech.map(t => `<span class="tech-tag">${t}</span>`).join("")}
-          </div>
-          <div class="featured-actions">
-            <button class="btn btn-ghost" onclick='openModal(${JSON.stringify(featured).replace(/'/g,"&#39;")})'>Full Details</button>
-          </div>
+  const featuredEl = document.getElementById("featured-projects");
+  const featuredProjects = projects.filter(p => p.featured);
+  featuredProjects.forEach(featured => {
+    const card = document.createElement("div");
+    card.className = "featured-card";
+    card.innerHTML = `
+      <div class="featured-badge"></div>
+      <div class="featured-left">
+        <h3>${featured.title}</h3>
+        <p>${featured.description}</p>
+        <div class="featured-tech">
+          ${featured.tech.map(t => `<span class="tech-tag">${t}</span>`).join("")}
         </div>
-        <div class="featured-preview">
-          <div class="preview-screens">
-            ${featured.images.map((img, i) => `
-              <div class="preview-screen ${i===0?"active":""}" title="${featured.imageLabels[i]}" style="overflow:hidden;position:relative;">
-                ${renderImage(img, featured.imageLabels[i])}
-              </div>
-            `).join("")}
-          </div>
-          <div class="preview-screen-label">${featured.imageLabels[0]}</div>
+        <div class="featured-actions">
+          <button class="btn btn-ghost" onclick='openModal(${JSON.stringify(featured).replace(/'/g,"&#39;")})'>Full Details</button>
         </div>
+      </div>
+      <div class="featured-preview">
+        <div class="preview-screens">
+          ${featured.images.map((img, i) => `
+            <div class="preview-screen ${i===0?"active":""}" title="${featured.imageLabels[i]}" style="overflow:hidden;position:relative;">
+              ${renderImage(img, featured.imageLabels[i])}
+            </div>
+          `).join("")}
+        </div>
+        <div class="preview-screen-label">${featured.imageLabels[0]}</div>
       </div>
     `;
 
-    // Image switcher
-    el.querySelectorAll(".preview-screen").forEach((screen, i) => {
+    featuredEl.appendChild(card);
+
+    // Image switcher for this featured card
+    card.querySelectorAll(".preview-screen").forEach((screen, i) => {
       screen.addEventListener("click", () => {
-        el.querySelectorAll(".preview-screen").forEach(s => s.classList.remove("active"));
+        card.querySelectorAll(".preview-screen").forEach(s => s.classList.remove("active"));
         screen.classList.add("active");
-        el.querySelector(".preview-screen-label").textContent = featured.imageLabels[i];
+        card.querySelector(".preview-screen-label").textContent = featured.imageLabels[i];
       });
     });
-  }
+  });
 
   // Year Filter Tabs
   const years = ["All", ...new Set(projects.filter(p => !p.featured).map(p => p.year))];
