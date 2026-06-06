@@ -223,35 +223,46 @@ function filterSkills(category) {
 
 // ── CERTIFICATIONS ───────────────────────────────────────────
 function buildCerts() {
-  const wrapper = document.getElementById("cert-swiper-wrapper");
-  PORTFOLIO_DATA.certifications.forEach(cert => {
-    const slide = document.createElement("div");
-    slide.className = "swiper-slide";
-    slide.innerHTML = `
-      <div class="cert-card" style="--cert-color:${cert.color}">
-        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:${cert.color};border-radius:var(--radius) var(--radius) 0 0"></div>
-        <span class="cert-badge">${cert.badge}</span>
-        <div class="cert-title">${cert.title}</div>
-        <div class="cert-issuer">${cert.issuer}</div>
-        <div class="cert-date">Issued ${cert.date}</div>
-        <a href="${cert.link}" target="_blank" class="cert-link">View Certificate ↗</a>
-      </div>
-    `;
-    wrapper.appendChild(slide);
+  const { certifications } = PORTFOLIO_DATA;
+  const categories = ["All", ...new Set(certifications.map(cert => cert.issuer))];
+
+  const filtersEl = document.getElementById("cert-filters");
+  categories.forEach(cat => {
+    const btn = document.createElement("button");
+    btn.className = "filter-btn" + (cat === "All" ? " active" : "");
+    btn.textContent = cat;
+    btn.addEventListener("click", () => {
+      document.querySelectorAll("#cert-filters .filter-btn").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      filterCerts(cat);
+    });
+    filtersEl.appendChild(btn);
   });
 
-  new Swiper(".cert-swiper", {
-    slidesPerView: 1,
-    spaceBetween: 20,
-    loop: true,
-    autoplay: { delay: 3500, disableOnInteraction: false },
-    pagination: { el: ".cert-pagination", clickable: true },
-    navigation: { prevEl: ".cert-prev", nextEl: ".cert-next" },
-    breakpoints: {
-      600: { slidesPerView: 2 },
-      900: { slidesPerView: 3 },
-      1100: { slidesPerView: 4 },
-    },
+  const gridEl = document.getElementById("cert-grid");
+  certifications.forEach(cert => {
+    const card = document.createElement("div");
+    card.className = "cert-card";
+    card.dataset.category = cert.issuer;
+    card.innerHTML = `
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:${cert.color};border-radius:var(--radius) var(--radius) 0 0"></div>
+      <span class="cert-badge">${cert.badge}</span>
+      <div class="cert-title">${cert.title}</div>
+      <div class="cert-issuer">${cert.issuer}</div>
+      <div class="cert-date">Issued ${cert.date}</div>
+      <a href="${cert.link}" target="_blank" class="cert-link">View Certificate ↗</a>
+    `;
+    gridEl.appendChild(card);
+  });
+}
+
+function filterCerts(category) {
+  document.querySelectorAll(".cert-card").forEach(card => {
+    if (category === "All" || card.dataset.category === category) {
+      card.classList.remove("hidden");
+    } else {
+      card.classList.add("hidden");
+    }
   });
 }
 

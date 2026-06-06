@@ -547,12 +547,22 @@ pre {
 }
 
 /* ── CERTIFICATIONS ──────────────────────────────────────────── */
-.cert-swiper { padding: 0 0 3.5rem; }
+.cert-filters {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+}
 .cert-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 2rem 1.75rem;
+  padding: 1.75rem 1.5rem;
   height: auto;
   transition: all var(--transition);
   position: relative;
@@ -565,8 +575,9 @@ pre {
   height: 3px;
 }
 .cert-card:hover { transform: translateY(-4px); border-color: var(--border-hover); }
+.cert-card.hidden { display: none; }
 .cert-badge {
-  font-size: 2.5rem;
+  font-size: 2.4rem;
   margin-bottom: 1rem;
   display: block;
 }
@@ -595,18 +606,6 @@ pre {
   transition: opacity var(--transition);
 }
 .cert-link:hover { opacity: 1; }
-
-.swiper-button-prev,
-.swiper-button-next {
-  color: var(--accent) !important;
-}
-.swiper-button-prev::after,
-.swiper-button-next::after {
-  font-size: 1.1rem !important;
-  font-weight: 900;
-}
-.swiper-pagination-bullet { background: var(--text-dim) !important; }
-.swiper-pagination-bullet-active { background: var(--accent) !important; }
 
 /* ── PROJECTS ────────────────────────────────────────────────── */
 /* Featured */
